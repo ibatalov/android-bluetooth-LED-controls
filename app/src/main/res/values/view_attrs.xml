@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomView">
+
+    </declare-styleable>
+
+    <declare-styleable name="HueSeekBar">
+        <attr name="minColor" format="color" />
+        <attr name="maxColor" format="color" />
+        <attr name="gradientType" format="enum">
+            <enum name="hsv" value="0"/>
+            <enum name="rgb" value="1"/>
+        </attr>
+        <attr name="barThickness" format="float"/>
+        <attr name="colorShiftDirection" format="enum">
+            <enum name="direct" value="0"/>
+            <enum name="reverse" value="1"/>
+        </attr>
+        <attr name="orientation" format="enum">
+            <enum name="horizontal" value="0"/>
+            <enum name="vertical" value="1"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="ColorPanelView">
+        <attr name="lowColor" format="color" />
+        <attr name="highColor" format="color" />
+        <attr name="xAxis" format="enum">
+            <enum name="hue" value="2"/>
+            <enum name="sat" value="1"/>
+            <enum name="val" value="0"/>
+        </attr>
+        <attr name="yAxis" format="enum">
+            <enum name="hue" value="2"/>
+            <enum name="sat" value="1"/>
+            <enum name="val" value="0"/>
+        </attr>
+        <attr name="aspectRatio" format="float"/>
+    </declare-styleable>
+
+    <declare-styleable name="LedBinOrganizer">
+        <attr name="defaultColor" format="color"/>
+        <attr name="dotShape" format="enum">
+            <enum name="circle" value="0"/>
+            <enum name="square" value="1"/>
+        </attr>
+        <attr name="dotRadius" format="dimension"/>
+        <attr name="dotDistanceX" format="dimension"/>
+        <attr name="dotDistanceY" format="dimension"/>
+        <attr name="numDots" format="integer"/>
+    </declare-styleable>
+
+</resources>

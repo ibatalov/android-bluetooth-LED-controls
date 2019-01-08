@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    android:id="@+id/palette_module"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/LedModuleCardView">
+
+    <LinearLayout
+        android:visibility="visible"
+        android:id="@+id/palette_module_top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/module_body_background"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/led_settings_hsv_module_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Send color from palette"
+            android:gravity="center"
+            style="@style/TitleLedSettingsModule"/>
+
+        <LinearLayout
+            android:id="@+id/palette_module_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/palette_module_save_settings"
+                    style="@style/CustomBorderlessButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Save"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text=" / "
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button"/>
+
+                <Button
+                    android:id="@+id/palette_module_load_settings"
+                    style="@style/CustomBorderlessButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Load"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <led_strip_control.batalov.ivan.ledstripcontrol.ColorPanelView
+                    custom:aspectRatio="1.3"
+                    custom:lowColor="@color/val_min"
+                    custom:highColor="@color/val_max"
+                    custom:xAxis="sat"
+                    custom:yAxis="val"
+
+                    android:id="@+id/led_settings_color_picker_panel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"/>
+
+                <led_strip_control.batalov.ivan.ledstripcontrol.HueSeekBar
+                    custom:minColor="@color/hue_min"
+                    custom:maxColor="@color/hue_max"
+                    custom:barThickness="0.2"
+                    custom:gradientType="hsv"
+                    custom:colorShiftDirection="direct"
+                    custom:orientation="vertical"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/led_settings_seek_bar_hue"
+                    android:layout_weight="0"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:minWidth="20dp"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/palette_module_instant_update"
+                    style="@style/Widget.AppCompat.CompoundButton.CheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="send automatically"
+                    android:gravity="center_vertical"
+                    android:layout_weight="0"
+                    android:padding="0dp"
+                    android:checked="true"/>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+                <Button
+                    style="@style/CustomBorderlessButton"
+                    android:id="@+id/led_settings_send_hsv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:layout_weight="0"
+                    android:layout_gravity="bottom"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Send"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

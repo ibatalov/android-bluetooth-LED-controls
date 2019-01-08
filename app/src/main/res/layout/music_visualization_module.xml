@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    android:id="@+id/music_visualisation_module"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/LedModuleCardView">
+
+    <LinearLayout
+        android:visibility="visible"
+        android:id="@+id/music_visualisation_module_top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:animateLayoutChanges="true"
+        android:background="@color/module_body_background">
+
+        <TextView
+            android:id="@+id/led_settings_sound_visualizer_module_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sound visualizer"
+            android:gravity="center"
+            style="@style/TitleLedSettingsModule"/>
+
+        <LinearLayout
+            android:id="@+id/music_visualisation_module_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:animateLayoutChanges="true"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/music_visualization_module_save_settings"
+                    style="@style/CustomBorderlessButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Save"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text=" / "
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button"/>
+
+                <Button
+                    android:id="@+id/music_visualization_module_load_settings"
+                    style="@style/CustomBorderlessButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Load"/>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:id="@+id/led_settings_freq_bins_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="right"
+                    android:text="Frequency bins (total):"/>
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:id="@+id/led_settings_freq_bins_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:text="16"/>
+
+                <SeekBar
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:id="@+id/led_settings_freq_bins_seek_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/led_settings_freq_bins_text"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignBottom="@id/led_settings_freq_bins_text"
+                    android:layout_toLeftOf="@id/led_settings_freq_bins_value"
+                    android:max="16"
+                    android:progress="16"/>
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:id="@+id/led_settings_led_bins_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/led_settings_freq_bins_text"
+                    android:layout_alignRight="@id/led_settings_freq_bins_text"
+                    android:gravity="right"
+                    android:text="Bins to show:"/>
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:id="@+id/led_settings_led_bins_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignLeft="@id/led_settings_freq_bins_value"
+                    android:layout_below="@id/led_settings_freq_bins_value"
+                    android:text="16"/>
+
+                <SeekBar
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:id="@+id/led_settings_led_bins_seek_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:max="16"
+                    android:progress="16"
+                    android:layout_toRightOf="@id/led_settings_led_bins_text"
+                    android:layout_below="@id/led_settings_freq_bins_text"
+                    android:layout_toLeftOf="@id/led_settings_led_bins_value"
+                    android:layout_alignBottom="@id/led_settings_led_bins_text"/>
+
+            </RelativeLayout>
+
+            <RadioGroup
+                android:id="@+id/led_settings_bin_split_method_radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Split into bins based on: "
+                    android:gravity="center_vertical"
+                    android:layout_weight="0"/>
+
+                <RadioButton
+                    android:id="@+id/led_settings_bin_split_method_noise"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="noise"
+                    android:layout_weight="1"/>
+
+                <RadioButton
+                    android:id="@+id/led_settings_bin_split_method_bark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:checked="true"
+                    android:text="Bark scale"
+                    android:layout_weight="1"/>
+
+            </RadioGroup>
+
+            <View
+                style="@style/LineSeparator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/separation_line"/>
+
+            <TextView
+                style="@style/SecondLevelTitleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LED bin order"/>
+
+            <RadioGroup
+                android:id="@+id/led_settings_bin_order_radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/led_settings_led_bin_order_ascending_freq"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="ascending frequency (red to purple)"/>
+
+                <RadioButton
+                    android:id="@+id/led_settings_led_bin_order_descending_ampl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="descending max average intensity"/>
+
+                <RadioButton
+                    android:id="@+id/led_settings_led_bin_order_ascending_sorted_freq"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ascending frequency (only top intensities)"/>
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/music_visualisation_module_sorting_speed_coeff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <View
+                    style="@style/LineSeparator"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/separation_line"/>
+
+                <TextView
+                    style="@style/SecondLevelTitleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LED bin sorting speed"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <SeekBar
+                        android:id="@+id/led_settings_max_averaging_coeff_seek_bar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:max="1000"
+                        android:progress="385"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/led_settings_max_averaging_coeff"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:text="0.070"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                style="@style/LineSeparator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/separation_line"/>
+
+            <TextView
+                style="@style/SecondLevelTitleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LED bin size"/>
+
+            <RadioGroup
+                android:id="@+id/led_settings_led_bin_size_radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/led_settings_led_bin_size_constant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:layout_weight="1"
+                    android:text="constant"/>
+
+                <RadioButton
+                    android:id="@+id/led_settings_led_bin_size_variable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="variable"/>
+
+                <RadioButton
+                    android:id="@+id/led_settings_led_bin_size_rainbow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="variable (rainbow)"/>
+            </RadioGroup>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/music_visualisation_module_led_length_and_brightness_settings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/led_settings_total_lit_led_length"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="variable lit LED length"/>
+
+                <View
+                    style="@style/LineSeparator"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/separation_line"/>
+
+                <TextView
+                    style="@style/SecondLevelTitleTextView"
+                    android:id="@+id/led_settings_led_bin_brightness_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="LED bin brightness"/>
+
+                <RadioGroup
+                    android:id="@+id/led_settings_led_bin_brightness_radio_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/led_settings_led_bin_individual_brightness"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:layout_weight="1"
+                        android:text="individual"/>
+
+                    <RadioButton
+                        android:id="@+id/led_settings_led_bin_average_brightness"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="average"/>
+
+                    <RadioButton
+                        android:id="@+id/led_settings_led_bin_interpolated_brightness"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="individual smoothed"/>
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <TextView
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="LED bins"/>
+
+            <RadioGroup
+                android:visibility="gone"
+                android:id="@+id/led_settings_bin_led_radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/led_settings_led_bin_leds_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:layout_weight="1"
+                    android:text="default"/>
+
+                <RadioButton
+                    android:id="@+id/led_settings_led_bin_leds_custom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="custom"/>
+
+            </RadioGroup>
+
+            <Button
+                android:visibility="gone"
+                android:id="@+id/led_settings_choose_led_bins"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Choose LED bins"/>
+
+            <FrameLayout
+                android:id="@+id/led_setting_led_bin_picker_frame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></FrameLayout>
+
+            <View
+                style="@style/LineSeparator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/separation_line"/>
+
+            <TextView
+                style="@style/SecondLevelTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LED brightness offset"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <SeekBar
+                    android:id="@+id/led_settings_brightness_offset_seek_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:max="100"
+                    android:progress="0"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/led_settings_brightness_offset_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:text="0.00"/>
+
+            </LinearLayout>
+
+            <View
+                style="@style/LineSeparator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/separation_line"/>
+
+            <TextView
+                style="@style/SecondLevelTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LED Smoothness"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <SeekBar
+                    android:id="@+id/led_settings_curr_signal_aver_coeff_seek_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:max="1000"
+                    android:progress="74"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/led_settings_current_signal_averaging_coeff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:text="0.600"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/led_settings_send_sound_visualization"
+                style="@style/CustomButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Start sound visualization"/>
+
+            <View
+                style="@style/LineSeparator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/separation_line"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:text="Duration (sec):"/>
+                <EditText
+                    android:id="@+id/led_settings_noise_duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="3"/>
+                <Button
+                    android:id="@+id/led_settings_noise_record"
+                    style="@style/CustomBorderlessButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:text="Record noise level"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    android:id="@+id/led_animation_module"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/LedModuleCardView">
+
+    <LinearLayout
+        android:visibility="visible"
+        android:id="@+id/led_animation_module_top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/module_body_background"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/led_settings_animation_module_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Animated Lights"
+            style="@style/TitleLedSettingsModule"/>
+
+        <LinearLayout
+            android:id="@+id/led_animation_module_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/led_animation_module_save_settings"
+                    style="@style/CustomBorderlessButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Save"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text=" / "
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button"/>
+
+                <Button
+                    android:id="@+id/led_animation_module_load_settings"
+                    style="@style/CustomBorderlessButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Load"/>
+            </LinearLayout>
+
+            <TextView
+                style="@style/SecondLevelTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Color Sequence"/>
+
+            <RadioGroup
+                android:id="@+id/led_animation_color_order_radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/led_animation_color_order_determined"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:text="linear (from red to blue)"/>
+
+                <RadioButton
+                    android:id="@+id/led_animation_color_order_random"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:checked="true"
+                    android:layout_weight="1"
+                    android:text="random"/>
+
+            </RadioGroup>
+
+            <View
+                style="@style/LineSeparator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/separation_line"/>
+
+            <TextView
+                style="@style/SecondLevelTitleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Color Transition"/>
+
+            <RadioGroup
+                android:id="@+id/led_animation_radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/led_animation_continuous_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="continuous"/>
+
+                <RadioButton
+                    android:id="@+id/led_animation_instant_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="instant"/>
+
+                <RadioButton
+                    android:id="@+id/led_animation_smoothed_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="smoothed"/>
+
+            </RadioGroup>
+
+            <View
+                style="@style/LineSeparator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/separation_line"/>
+
+            <TextView
+                style="@style/SecondLevelTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:text="Color Duration"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingRight="5dp">
+
+                <SeekBar
+                    android:id="@+id/led_animation_duration_seek_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:progress="10"
+                    android:max="100"/>
+                <TextView
+                    android:id="@+id/led_animation_duration_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="10"/>
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/led_animation_duration_scale"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/led_animation_duration_scale_x0.01"
+                    android:layout_weight="1"
+                    android:text="x0.01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+
+                <RadioButton
+                    android:id="@+id/led_animation_duration_scale_x1"
+                    android:checked="true"
+                    android:layout_weight="1"
+                    android:text="x1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+
+                <RadioButton
+                    android:id="@+id/led_animation_duration_scale_x100"
+                    android:layout_weight="1"
+                    android:text="x100"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+
+                <RadioButton
+                    android:id="@+id/led_animation_duration_scale_x10000"
+                    android:layout_weight="1"
+                    android:text="x10,000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+            </RadioGroup>
+
+            <View
+                style="@style/LineSeparator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/separation_line"/>
+
+            <TextView
+                style="@style/SecondLevelTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:text="Brightness"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingRight="5dp">
+
+                <SeekBar
+                    android:id="@+id/led_animation_brightness_seek_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:progress="100"
+                    android:max="100"/>
+                <TextView
+                    android:id="@+id/led_animation_brightness_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="1.00"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/led_animation_start_button"
+                style="@style/CustomBorderlessButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="Start animation"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

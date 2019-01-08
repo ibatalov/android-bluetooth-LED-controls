@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="led_bin_order_ids">
+        <item>@id/led_settings_led_bin_order_ascending_freq</item>
+        <item>@id/led_settings_led_bin_order_descending_ampl</item>
+        <item>@id/led_settings_led_bin_order_ascending_sorted_freq</item>
+    </array>
+</resources>

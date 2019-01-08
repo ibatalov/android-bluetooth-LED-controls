@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_centerInParent="true"
+    android:background="?android:colorBackground">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:text="Presets:"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/led_bin_pick_uniform_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Uniform"/>
+        <Button
+            android:id="@+id/led_bin_pick_centered1_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Centered 1"/>
+        <Button
+            android:id="@+id/led_bin_pick_centered2_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Centered 2"/>
+        <Button
+            android:id="@+id/led_bin_pick_mixed_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Mixed"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/led_bin_pick_grid_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" />
+
+
+    <led_strip_control.batalov.ivan.ledstripcontrol.LedBinOrganizer
+        custom:defaultColor="@color/black"
+        custom:dotDistanceX="15dp"
+        custom:dotDistanceY="20dp"
+        custom:dotRadius="5dp"
+        custom:dotShape="circle"
+        custom:numDots="128"
+
+        android:id="@+id/led_bin_pick_organizer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"/>
+</LinearLayout>

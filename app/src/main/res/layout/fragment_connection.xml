@@ -1,0 +1,55 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/palette_color_4_light_1"
+    tools:context="led_strip_control.batalov.ivan.ledstripcontrol.ConnectionFragment">
+
+    <TextView
+        android:id="@+id/connection_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:text="Bluetooth Connection"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textColor="@color/menu_panel_text"
+        android:background="@color/palette_color_4_dark_1"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"/>
+
+    <ListView
+        android:id="@+id/connection_device_list"
+        android:background="?android:colorBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/connection_title"
+        android:layout_above="@+id/connection_discover_button"
+        android:layout_margin="0dp"/>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/palette_color_4_dark_1"
+        android:layout_alignTop="@+id/connection_discover_button"
+        android:layout_alignBottom="@+id/connection_discover_button"
+        android:layout_alignLeft="@+id/connection_discover_button"
+        android:layout_alignRight="@+id/connection_discover_button"/>
+
+    <Button
+        android:id="@+id/connection_discover_button"
+        style="@style/CustomButton"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="Discover devices"/>
+
+</RelativeLayout>

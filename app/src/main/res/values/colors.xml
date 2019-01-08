@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="black">#000000</color>
+
+    <color name="gray_translucent_background">#88000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="menu_panel_background">#5555AA</color>
+    <color name="menu_panel_text">#FAFAFA</color>
+    <color name="bt_device_name">#222222</color>
+    <color name="module_title_text">#5b5bd2</color>
+    <color name="module_title_background">#c8c8f9</color>
+    <color name="module_body_background">#00d9d9d9</color>
+    <color name="separation_line">#c8c8f9</color>
+
+
+    <color name="hue_min">#FF0000</color>
+    <color name="hue_max">#FF0004</color>
+    <color name="sat_min">#AAAAAA</color>
+    <color name="sat_max">#FF0000</color>
+    <color name="val_min">#000000</color>
+    <color name="val_max">#FF0000</color>
+
+    <color name="palette_color_1_light_1">#6FBF9D</color>
+    <color name="palette_color_1_light_2">#D4F0E4</color>
+    <color name="palette_color_1_neutral">#34956B</color>
+    <color name="palette_color_1_dark_1">#127349</color>
+    <color name="palette_color_1_dark_2">#003B22</color>
+
+    <color name="palette_color_2_light_1">#8A9FD1</color>
+    <color name="palette_color_2_light_2">#BCCBEC</color>
+    <color name="palette_color_2_neutral">#3D5692</color>
+    <color name="palette_color_2_dark_1">#1C3570</color>
+    <color name="palette_color_2_dark_2">#041439</color>
+
+    <color name="palette_color_3_light_1">#FFDB94</color>
+    <color name="palette_color_3_light_2">#FFF5E1</color>
+    <color name="palette_color_3_neutral">#DAAA4B</color>
+    <color name="palette_color_3_dark_1">#A7781B</color>
+    <color name="palette_color_3_dark_2">#563900</color>
+
+    <color name="palette_color_4_light_1">#8D98D3</color>
+    <color name="palette_color_4_light_2">#FFFFFF</color>
+    <color name="palette_color_4_neutral">#616EB2</color>
+    <color name="palette_color_4_dark_1">#424F96</color>
+    <color name="palette_color_4_dark_2">#2A3677</color>
+
+</resources>
